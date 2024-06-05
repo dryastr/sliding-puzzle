@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://cjrohpooys7ow"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_fshg2"]
+[ext_resource type="Texture2D" uid="uid://dc3bcgh8j37kr" path="res://img/tile1.png" id="1_glx6w"]
+[ext_resource type="Texture2D" uid="uid://dyq1g0apimeu2" path="res://img/tile2.png" id="2_gm01w"]
+[ext_resource type="Texture2D" uid="uid://yuwiiipo8w7y" path="res://img/tile3.png" id="3_58xw1"]
+[ext_resource type="Texture2D" uid="uid://31xt6fam5set" path="res://img/tile4.png" id="4_3pnlv"]
+[ext_resource type="Texture2D" uid="uid://cbl2pdb4cq8x0" path="res://img/tile5.png" id="5_8vnnq"]
+[ext_resource type="Texture2D" uid="uid://c2alfv7b707jy" path="res://img/tile6.png" id="6_tmj27"]
+[ext_resource type="Texture2D" uid="uid://bylktvdj7uev5" path="res://img/tile7.png" id="7_2pkyp"]
+[ext_resource type="Texture2D" uid="uid://bnm0iv8u0obb5" path="res://img/tile8.png" id="8_bcjsd"]
+[ext_resource type="Texture2D" uid="uid://rvb68q87v2vc" path="res://img/tile9.png" id="9_pa7hw"]
+[ext_resource type="Texture2D" uid="uid://bmyltxtnw1odk" path="res://img/tile10.png" id="10_c7yih"]
+[ext_resource type="Texture2D" uid="uid://xao38ntbj4l1" path="res://img/tile11.png" id="11_76s57"]
+[ext_resource type="Texture2D" uid="uid://dgm2q3vnjvnl0" path="res://img/tile12.png" id="12_r3lwq"]
+[ext_resource type="Texture2D" uid="uid://cghcc146rlpji" path="res://img/tile13.png" id="13_48h5h"]
+[ext_resource type="Texture2D" uid="uid://c0uhi78vcxfe1" path="res://img/tile14.png" id="14_reg5l"]
+[ext_resource type="Texture2D" uid="uid://bwvyjinvw6dyp" path="res://img/tile15.png" id="15_mlh55"]
+[ext_resource type="Texture2D" uid="uid://bwhfhg3yrdtul" path="res://img/empty.png" id="16_uyd70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bac8"]
+size = Vector2(1000, 1000)
+
+[node name="Main" type="Area2D"]
+script = ExtResource("1_fshg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(500, 500)
+shape = SubResource("RectangleShape2D_3bac8")
+
+[node name="Tile1" type="Sprite2D" parent="."]
+position = Vector2(125, 125)
+texture = ExtResource("1_glx6w")
+
+[node name="Tile2" type="Sprite2D" parent="."]
+position = Vector2(375, 125)
+texture = ExtResource("2_gm01w")
+
+[node name="Tile3" type="Sprite2D" parent="."]
+position = Vector2(625, 125)
+texture = ExtResource("3_58xw1")
+
+[node name="Tile4" type="Sprite2D" parent="."]
+position = Vector2(875, 125)
+texture = ExtResource("4_3pnlv")
+
+[node name="Tile5" type="Sprite2D" parent="."]
+position = Vector2(125, 375)
+texture = ExtResource("5_8vnnq")
+
+[node name="Tile6" type="Sprite2D" parent="."]
+position = Vector2(375, 375)
+texture = ExtResource("6_tmj27")
+
+[node name="Tile7" type="Sprite2D" parent="."]
+position = Vector2(625, 375)
+texture = ExtResource("7_2pkyp")
+
+[node name="Tile8" type="Sprite2D" parent="."]
+position = Vector2(875, 375)
+texture = ExtResource("8_bcjsd")
+
+[node name="Tile9" type="Sprite2D" parent="."]
+position = Vector2(125, 625)
+texture = ExtResource("9_pa7hw")
+
+[node name="Tile10" type="Sprite2D" parent="."]
+position = Vector2(375, 625)
+texture = ExtResource("10_c7yih")
+
+[node name="Tile11" type="Sprite2D" parent="."]
+position = Vector2(625, 625)
+texture = ExtResource("11_76s57")
+
+[node name="Tile12" type="Sprite2D" parent="."]
+position = Vector2(875, 625)
+texture = ExtResource("12_r3lwq")
+
+[node name="Tile13" type="Sprite2D" parent="."]
+position = Vector2(125, 875)
+texture = ExtResource("13_48h5h")
+
+[node name="Tile14" type="Sprite2D" parent="."]
+position = Vector2(375, 875)
+texture = ExtResource("14_reg5l")
+
+[node name="Tile15" type="Sprite2D" parent="."]
+position = Vector2(625, 875)
+texture = ExtResource("15_mlh55")
+
+[node name="Tile16" type="Sprite2D" parent="."]
+position = Vector2(875, 875)
+texture = ExtResource("16_uyd70")
+
+[node name="DimPanel" type="ColorRect" parent="."]
+offset_right = 1000.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 0.737255)
+metadata/_edit_use_anchors_ = true
+
+[node name="WinLabel" type="Label" parent="."]
+offset_left = 137.0
+offset_top = 361.0
+offset_right = 865.0
+offset_bottom = 498.0
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 100
+text = "Kamu Berhasil!"
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 506.0
+offset_right = 593.0
+offset_bottom = 583.0
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
